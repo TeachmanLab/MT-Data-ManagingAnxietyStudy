@@ -5,9 +5,10 @@ This repository is the knowledge base for the MindTrails Managing Anxiety Study 
 **Table of Contents**
 1. [Previous Names](#previous-names)
 2. [Goal](#goal)
-3. [Data Cleaning](#data-cleaning)
-4. [List of Projects](#list-of-projects)
-5. [Contact](#contact)
+3. [Redact Raw Data](#redact-raw-data)
+4. [Data Cleaning](#data-cleaning)
+5. [List of Projects](#list-of-projects)
+6. [Contact](#contact)
 
 ## Previous Names
 Until 5/18/2020, this repository was named "R34-Data".
