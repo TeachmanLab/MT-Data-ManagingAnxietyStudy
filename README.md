@@ -13,15 +13,15 @@ Table of Contents
 - Until 5/18/2020, this repository was named "R34-Data".
 
 ## Goal
-- We try to have a one document to address all the projects related to _R34_ study and major data cleaning issues.
+- This repository contains information for centralized data cleaning and projects related to Managing Anxiety study.
 - Each data analysis project has its own folder that contains the code specific to that project.
 
 ## Data Cleaning
-- Check the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) folder for the detailed data-cleaning process
+- Check the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) folder for data cleaning scripts.
   
 ## List of Projects
-1. [Main Outcomes](https://github.com/TeachmanLab/R34-Data/tree/master/Main%20Outcomes), Leader: Julie Ji
-2. [Credibility](https://github.com/TeachmanLab/R34-Data/tree/master/Credibility), Leader: Nicola Hohensee
+1. [Main Outcomes](https://github.com/TeachmanLab/R34-Data/tree/master/Main%20Outcomes) (Leader: Julie Ji)
+2. [Credibility](https://github.com/TeachmanLab/R34-Data/tree/master/Credibility) (Leader: Nicola Hohensee)
 
 ## Contact
-If you are a researcher who wants to contribute to this project, please contact Henry Behan at hb7zz@virginia.edu. Thanks!
+If you are a researcher who wants to contribute to this project, please contact Bethany Teachman at bteachman@virginia.edu. Thanks!
