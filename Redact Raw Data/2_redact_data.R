@@ -52,9 +52,7 @@ groundhog_day <- version_control()
 
 # Import 20 raw CSV files obtained from the Private Component of the MindTrails 
 # Managing Anxiety study's OSF project (https://osf.io/pvd67/) on 9/3/2025. Yuhan
-# Hou had dumped these files from the Managing Anxiety SQL server on 2/9/2019. She
-# used Grafana to dump all the files except for the "TrialDAO" file, which was too 
-# large to dump via Grafana and which she thus dumped from the SQL server directly.
+# Hou had dumped these files from the Managing Anxiety SQL server on 2/9/2019.
 
 # Obtain file names of raw CSV data files
 
