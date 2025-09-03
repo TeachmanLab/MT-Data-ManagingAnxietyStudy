@@ -15,6 +15,9 @@ Until 5/18/2020, this repository was named "R34-Data".
 ## Goal
 To conduct centralized data cleaning for the study and list projects that analyze the study's data. Each data analysis project has its own folder that contains the code specific to that project.
 
+## Obtain and Redact Raw Data
+See the [Redact Raw Data](https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy/tree/master/Redact%20Raw%20Data) folder.
+
 ## Data Cleaning
 See the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) folder.
 
