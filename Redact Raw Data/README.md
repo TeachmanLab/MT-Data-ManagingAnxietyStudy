@@ -1,5 +1,7 @@
 # Obtain and Redact Raw Data
 
+README Author: [Jeremy W. Eberle](https://github.com/jwe4ec)
+
 ## Data on Open Science Framework
 
 Raw data from the Managing Anxiety SQL database are stored in the [MindTrails Managing Anxiety Study](https://osf.io/pvd67/) project on the Open Science Framework (OSF). The project has two components, with different permissions: a [Private Component](https://osf.io/5sn2x/) and a [Public Component](https://osf.io/2x3jq/).
