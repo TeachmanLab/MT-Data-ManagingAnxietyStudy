@@ -20,7 +20,7 @@ Researchers can request access to files on this component by contacting the stud
 
 The [Public Component](https://osf.io/2x3jq/) contains a partial set of raw data tables (i.e., those that did not need redaction) and a redacted table (from `2_redact_data.R`). The structure of the ZIP file is below.
 
-Note: The `ImageryPrime` table in the `1_raw_full` folder of the [Private Component](#private-component) that is not in the `1_raw_partial` folder of this [Public Component](https://osf.io/2x3jq/) has free-text responses that may or may not have identifiers. In the [Public Component](https://osf.io/2x3jq/), a redacted version of this table is in `2_redacted`.
+Note: The `ImageryPrime` table in the `1_raw_full` folder of the [Private Component](#private-component) that is not in the `1_raw_partial` folder of this [Public Component](https://osf.io/2x3jq/) has free-text responses that may have identifiers. In the [Public Component](https://osf.io/2x3jq/), a redacted version of this table is in `2_redacted`.
 
 ```
 .
@@ -38,7 +38,7 @@ The scripts in the `Redact Raw Data` folder of this repository import the full r
 
 If you have access to the full raw data (from the [Private Component](#private-component)), you can reproduce the redaction. Create a parent folder (with any desired name, indicated by `.` below) with two subfolders: `data` and `Redact Raw Data`. The working directory must be set to the parent folder for the script to import and export data correctly using relative file paths.
 
-Put all the raw data files in a subfolder of `data` called `1_raw_full`. When you run `2_redact_data.R`, it will create `2_redacted` and a file therein.
+Put the raw data files in a subfolder of `data` called `1_raw_full`. When you run `2_redact_data.R`, it will create `2_redacted` and a file therein.
 
 ```
 .                                # Parent folder (i.e., working directory)
