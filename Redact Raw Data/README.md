@@ -10,8 +10,8 @@ The [Private Component](https://osf.io/pvd67/) contains the full set of 20 raw d
 
 ```
 .
-├── data
-└── └── 1_raw_full       # 20 CSV files (e.g., "DASS21_AS_02_02_2019.csv", "ImageryPrime_02_02_2019.csv")
+└── data
+    └── 1_raw_full       # 20 CSV files (e.g., "DASS21_AS_02_02_2019.csv", "ImageryPrime_02_02_2019.csv")
 ```
 
 Researchers can request access to files on this component by contacting the study team ([studyteam@mindtrails.org](mailto:studyteam@mindtrails.org)).
@@ -25,18 +25,27 @@ Note: The `ImageryPrime` table in the `1_raw_full` folder of the [Private Compon
 ```
 .
 ├── data                    
-├── ├── 1_raw_partial    # 19 CSV files (did not need redaction; e.g., "DASS21_AS_02_02_2019.csv")
-├── ├── 2_redacted       # 1 CSV file (needed redaction; i.e., ImageryPrime_02_02_2019_redacted.csv")
-├── materials
-├── ├── appendices       # Appendices
-└── └── codebooks        # Codebooks
+|   ├── 1_raw_partial    # 19 CSV files (did not need redaction; e.g., "DASS21_AS_02_02_2019.csv")
+|   └── 2_redacted       # 1 CSV file (needed redaction; i.e., ImageryPrime_02_02_2019_redacted.csv")
+└── materials
+    ├── appendices       # Appendices
+    └── codebooks        # Codebooks
 ```
 
-## Redaction Script: Setup and File Relations
+## Redaction Scripts: Setup and File Relations
 
-TODO
+The scripts in the [`Redact Raw Data`](Redact Raw Data) folder of this repository import the full raw data files and redact a file.
 
+If you have access to the full raw data (from the [Private Component](#private-component)), you can reproduce the redaction. Create a parent folder (with any desired name, indicated by `.` below) with two subfolders: `data` and `Redact Raw Data`. The working directory must be set to the parent folder for the script to import and export data correctly using relative file paths.
 
+Put all the raw data files in a subfolder of `data` called `1_raw_full`. When you run the script, `2_redact_data.R` will create `2_redacted` and a file therein.
 
-
-
+```
+.                                # Parent folder (i.e., working directory)
+├── data                         #   Data subfolder
+|   ├── 1_raw_full               #     20 CSV files from Private Component
+|   └── (2_redacted)             #     Folder with 1 CSV file will be created by "2_redact_data.R"
+└── Redact Raw Data              #   Code subfolder
+    ├── 1_define_functions.R     #     Define functions for use by subsequent R scripts
+    └── 2_redact_data.R          #     Redact 1 CSV file from "1_raw_full" and output it to "2_redacted"
+```
