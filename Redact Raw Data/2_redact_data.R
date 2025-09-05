@@ -23,10 +23,20 @@
 # Because it does not change the raw data structure, the script should run on 
 # already redacted data files in addition to raw data files without error.
 
-# Scope: This script is based on data dumped from the Managing Anxiety SQL server on 
-# February 2, 2019. This script may need to be updated when applied to data downloaded
-# before or after this date, as there may have been changes to the database or newly 
-# collected data not accounted for by this script.
+# Scope: This script is based on (a) a partial set of 20 data tables as of 2/2/2019, 
+# that were obtained from Sonia Baee on 1/18/2023, and (b) a larger set of 26 data 
+# tables as of 2/2/2019, that were obtained from Sonia Baee on 9/3/2020 (who stated 
+# on that date that they represent the latest version of the database on the R34 server 
+# and that she obtained them from Claudia Calicho-Mamani)
+
+# TODO: Note extent to which extent Set A versus Set B tables are raw data (or more so)
+
+
+
+
+
+# This script may need to be updated when applied to other data sources, as there may 
+# have been changes to the database or newly collected data not accounted for by this script.
 
 # ---------------------------------------------------------------------------- #
 # Store working directory, install correct R version, load packages ----
@@ -50,9 +60,16 @@ groundhog_day <- version_control()
 # Import raw data ----
 # ---------------------------------------------------------------------------- #
 
-# Import 20 raw CSV files obtained from the Private Component of the MindTrails 
-# Managing Anxiety study's OSF project (https://osf.io/pvd67/) on 9/3/2025. Yuhan
-# Hou had dumped these files from the Managing Anxiety SQL server on 2/9/2019.
+# TODO: Reconcile the tables noted in Set A versus Set B above and apply this
+# script to Set B tables too
+
+
+
+
+
+# Import 20 CSV files obtained from the Private Component of the MindTrails 
+# Managing Anxiety study's OSF project (https://osf.io/pvd67/) on 9/3/2025. These
+# are the tables from Set A noted under Scope above.
 
 # Obtain file names of raw CSV data files
 

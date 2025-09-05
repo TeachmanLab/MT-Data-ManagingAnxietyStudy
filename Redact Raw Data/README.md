@@ -8,7 +8,13 @@ Raw data from the Managing Anxiety SQL database are stored in the [MindTrails Ma
 
 ### Private Component
 
-The [Private Component](https://osf.io/5sn2x/) contains the full set of 20 raw data tables dumped from the Managing Anxiety SQL database on February 2, 2019. [Yuhan Hou](https://github.com/Yuhan-hou71) used Grafana to dump these files except for the "TrialDAO" file, which was too large to dump via Grafana and which she thus dumped from the database directly. The folder structure of the ZIP file is below.
+The [Private Component](https://osf.io/5sn2x/) contains a partial set of 20 raw data tables obtained from the Managing Anxiety SQL database on February 2, 2019. The folder structure of the ZIP file is below.
+
+TODO: After reconciling Set A vs. Set B tables (see "2_redact_data.R" for details), note the extent to which each set represents the raw data
+
+
+
+
 
 ```
 .
