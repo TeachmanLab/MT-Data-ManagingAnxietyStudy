@@ -23,11 +23,11 @@
 # Because it does not change the raw data structure, the script should run on 
 # already redacted data files in addition to raw data files without error.
 
-# Scope: This script is based on (a) a partial set of 20 data tables as of 2/2/2019, 
-# that were obtained from Sonia Baee on 1/18/2023, and (b) a larger set of 26 data 
-# tables as of 2/2/2019, that were obtained from Sonia Baee on 9/3/2020 (who stated 
-# on that date that they represent the latest version of the database on the R34 server 
-# and that she obtained them from Claudia Calicho-Mamani)
+# Scope: This script is based on (a) a larger set of 26 data tables as of 2/2/2019, 
+# that were obtained from Sonia Baee on 9/3/2020 (who stated on that date that they 
+# represent the latest version of the database on the R34 server and that she obtained 
+# them from Claudia Calicho-Mamani) and (b) a partial set of 20 data tables as of 
+# 2/2/2019, that were obtained from Sonia Baee on 1/18/2023
 
 # TODO: Note extent to which extent Set A versus Set B tables are raw data (or more so)
 
@@ -61,7 +61,7 @@ groundhog_day <- version_control()
 # ---------------------------------------------------------------------------- #
 
 # TODO: Reconcile the tables noted in Set A versus Set B above and apply this
-# script to Set B tables too
+# script to Set A tables too. So far it's based on only Set B.
 
 
 
@@ -69,7 +69,7 @@ groundhog_day <- version_control()
 
 # Import 20 CSV files obtained from the Private Component of the MindTrails 
 # Managing Anxiety study's OSF project (https://osf.io/pvd67/) on 9/3/2025. These
-# are the tables from Set A noted under Scope above.
+# are the tables from Set B noted under Scope above.
 
 # Obtain file names of raw CSV data files
 
