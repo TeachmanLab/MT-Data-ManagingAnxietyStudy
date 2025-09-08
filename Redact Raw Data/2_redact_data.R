@@ -74,7 +74,7 @@ groundhog_day <- version_control()
 # Obtain file names of raw CSV data files
 
 raw_data_dir <- paste0(wd_dir, "/data/1_raw_full/")
-filenames <- list.files(raw_data_dir, pattern = "*.csv", full.names = FALSE)
+filenames <- list.files(raw_data_dir, pattern = "\\.csv$")
 
 # Import data files into list
 
