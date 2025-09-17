@@ -7,44 +7,30 @@
 # Notes ----
 # ---------------------------------------------------------------------------- #
 
-# Before running this script, restart R (CTRL+SHIFT+F10 on Windows), set your working 
-# directory to the parent folder, and ensure that the raw CSV files obtained from the 
-# Private Component of the Managing Anxiety OSF project (https://osf.io/pvd67/) are in 
-# "./data/1_raw_full/". This script will import raw data from "./data/1_raw_full/" and 
-# output redacted data to "./data/2_redacted/".
+# Before running this script, restart R (CTRL+SHIFT+F10 on Windows), set your 
+# working directory to the parent folder, and ensure that the raw CSV files for 
+# Sets A and B obtained from the Private Component of the Managing Anxiety OSF 
+# project (https://osf.io/pvd67/) are in "./data/raw/set_a/" and "./data/raw/set_b/".
+# This script will import raw data from those folders and output redacted data to 
+# "./data/redacted/set_a/" and "./data/redacted/set_b/".
 
 # For raw data files that contain potential identifiers, this script redacts the
-# relevant data so that subsequent cleaning can be run on a dataset that can be 
-# shared and made public. This way all data cleaning steps are transparent and 
-# reproducible without compromising potentially identifiable information.
+# relevant columns so that subsequent cleaning can be run on a dataset that can be 
+# shared and made public. Rather than changing the structure of the raw data, this 
+# script replaces values of the relevant columns with "REDACTED_BY_CLEANING_SCRIPT".
 
-# Rather than changing the structure of the raw data files, this script replaces
-# potentially identifiable values with the value "REDACTED_BY_CLEANING_SCRIPT".
-# Because it does not change the raw data structure, the script should run on 
-# already redacted data files in addition to raw data files without error.
+# Scope: This script is based on these two raw datasets (which differ in some ways):
+# - (a) A larger set of 26 CSV files as of 2/2/2019 obtained from Sonia Baee on 
+# 9/3/2020 (who stated on that date that they represent the latest version of the 
+# database on the R34 server and that she obtained them from Claudia Calicho-Mamani)
+# - (b) A partial set of 20 CSV files as of 2/2/2019 obtained from Sonia on 1/18/2023
 
-# Scope: This script is based on (a) a larger set of 26 data tables as of 2/2/2019, 
-# that were obtained from Sonia Baee on 9/3/2020 (who stated on that date that they 
-# represent the latest version of the database on the R34 server and that she obtained 
-# them from Claudia Calicho-Mamani) and (b) a partial set of 20 data tables as of 
-# 2/2/2019, that were obtained from Sonia Baee on 1/18/2023
-
-# TODO: Note extent to which extent Set A versus Set B tables are raw data (or more so)
-
-
-
-
-
-# This script may need to be updated when applied to other data sources, as there may 
-# have been changes to the database or newly collected data not accounted for by this script.
+# This script may need updating when applied to other data sources, as there may have
+# been changes to the database or newly collected data not accounted for by this script
 
 # ---------------------------------------------------------------------------- #
 # Store working directory, install correct R version, load packages ----
 # ---------------------------------------------------------------------------- #
-
-# Store working directory
-
-wd_dir <- getwd()
 
 # Load custom functions
 
@@ -57,33 +43,26 @@ groundhog_day <- version_control()
 # No packages loaded
 
 # ---------------------------------------------------------------------------- #
-# Import raw data ----
+# Import raw data Sets A and B ----
 # ---------------------------------------------------------------------------- #
 
-# TODO: Reconcile the tables noted in Set A versus Set B above and apply this
-# script to Set A tables too. So far it's based on only Set B.
+# Obtain names of raw data files
 
+filenames_a <- readLines("./data/raw/filenames_set_a.txt")
+filenames_b <- readLines("./data/raw/filenames_set_b.txt")
 
+# Import data files into named lists
 
+dat_a <- lapply(paste0("./data/raw/set_a/", filenames_a), read.csv)
+dat_b <- lapply(paste0("./data/raw/set_b/", filenames_b), read.csv)
 
+names(dat_a) <- tools::file_path_sans_ext(filenames_a)
+names(dat_b) <- tools::file_path_sans_ext(filenames_b)
 
-# Import 20 CSV files obtained from the Private Component of the MindTrails 
-# Managing Anxiety study's OSF project (https://osf.io/pvd67/) on 9/3/2025. These
-# are the tables from Set B noted under Scope above.
+# Rename data files in lists
 
-# Obtain file names of raw CSV data files
-
-raw_data_dir <- paste0(wd_dir, "/data/1_raw_full/")
-filenames <- list.files(raw_data_dir, pattern = "\\.csv$")
-
-# Import data files into list
-
-dat <- lapply(paste0(raw_data_dir, filenames), read.csv)
-
-# Name data tables in list (keeping the part of the filename that comes before the 
-# first underscore that is followed by a digit)
-
-names(dat) <- sub("_\\d.*", "", filenames)
+names(dat_a) <- sub("_Feb_02_2019", "", names(dat_a))
+names(dat_b) <- sub("_02_02_2019",  "", names(dat_b))
 
 # ---------------------------------------------------------------------------- #
 # Specify columns to retain ----
@@ -95,72 +74,117 @@ names(dat) <- sub("_\\d.*", "", filenames)
 # any participants over age 89 do not apply
 
 # ---------------------------------------------------------------------------- #
-# Identify character columns ----
+# Identify and manually check character columns in Sets A and B ----
 # ---------------------------------------------------------------------------- #
+
+# Define function to list each table's character columns that need to be checked,
+# optionally ignoring specified columns
+
+list_char_cols_to_check <- function(dat, ignore_cols = NULL) {
+  char_cols_to_check <- lapply(dat, function(df) {
+    char_cols <- names(df)[sapply(df, is.character)]
+    
+    setdiff(char_cols, ignore_cols)
+  })
+  
+  char_cols_to_check <- Filter(length, char_cols_to_check)
+}
 
 # Specify character columns to ignore
 
-ignore_cols <- c("date", "datetime", "session", "corrected_session", "sessionName")
+ignore_cols_a <- c("date", "date_completed", "datetime", "corrected_datetime", "dateSent",
+                   "sessionId", "session", "corrected_session", "sessionName", "session_name",
+                   "participantRSA")
+ignore_cols_b <- c("date", "datetime", "session", "corrected_session", "sessionName")
 
-# Create list of table names whose tables contain nonignorable character columns
+# List character columns to check
 
-char_cols_to_check <- lapply(dat, function(df) {
-  char_cols <- names(df)[sapply(df, is.character)]
-  
-  setdiff(char_cols, ignore_cols)
-})
+(char_cols_to_check_a <- list_char_cols_to_check(dat_a, ignore_cols_a))
+(char_cols_to_check_b <- list_char_cols_to_check(dat_b, ignore_cols_b))
 
-char_cols_to_check <- Filter(length, char_cols_to_check)
+# Manually checked all nonignorable character columns identified in following tables
 
-# Checked all nonignorable character columns identified in following tables. Only
-# "ImageryPrime$situation" contains potential identifiable info.
+  # In Set A, only "GiftLogDAO_recovered$orderId" and "ImageryPrime_recovered$situation" 
+  # contain potential identifiable info
 
-checked_tables <- names(char_cols_to_check)
+checked_tbls_a <- names(char_cols_to_check_a)
 
-all(checked_tables == c("AnxietyTriggers", "CIHS", "DD_FU", "Demographics", 
+all(checked_tbls_a == c("AnxietyTriggers_recovered", "CIHS_FIXED", "CIHS_recovered", 
+                        "DD_FU_recovered", "Demographic_recovered", "EmailLogDAO_recovered", 
+                        "GiftLogDAO_recovered", "ImageryPrime_recovered", 
+                        "MentalHealthHxTx_recovered", "MultiUserExperience_recovered", 
+                        "ParticipantExportDAO_recovered", "ReturnIntention_recovered", 
+                        "TaskLog_final_FIXED", "TrialDAO_recovered", "VisitDAO_recovered"))
+
+  # In Set B, only "ImageryPrime$situation" contains potential identifiable info
+
+checked_tbls_b <- names(char_cols_to_check_b)
+
+all(checked_tbls_b == c("AnxietyTriggers", "CIHS", "DD_FU", "Demographics", 
                         "ImageryPrime", "MentalHealthHxTx", "MultiUserExperience", 
                         "ReturnIntention", "TrialDAO"))
 
 # ---------------------------------------------------------------------------- #
-# Redact "ImageryPrime$situation" ----
+# Redact columns in Sets A and B ----
 # ---------------------------------------------------------------------------- #
 
-# Redact descriptions of an anxious situation for anxiety imagery prime task
+redaction_text <- "REDACTED_BY_CLEANING_SCRIPT"
 
-dat$ImageryPrime$situation <- "REDACTED_BY_CLEANING_SCRIPT"
+# In Set A, redact gift card order ID for security reasons
+
+dat_a$GiftLogDAO_recovered$orderId <- redaction_text
+
+# In Sets A and B, redact descriptions of anxious situation for imagery prime
+
+dat_a$ImageryPrime_recovered$situation <- redaction_text
+dat_b$ImageryPrime$situation           <- redaction_text
 
 # ---------------------------------------------------------------------------- #
-# List tables that have been redacted ----
+# List tables in Sets A and B that have been redacted ----
 # ---------------------------------------------------------------------------- #
 
 # List all tables that have been redacted by this script so that the redacted
 # files can be named appropriately when outputted
 
-redacted_tbls <- "ImageryPrime"
+redacted_tbls_a <- c("GiftLogDAO_recovered", "ImageryPrime_recovered")
+redacted_tbls_b <- "ImageryPrime"
 
 # ---------------------------------------------------------------------------- #
-# Export redacted data ----
+# Export redacted data for Sets A and B ----
 # ---------------------------------------------------------------------------- #
 
-# Prepare filenames, preventing "-redacted" from being appended multiple times
-# if the script is run on any files that have already been redacted
+# Define function to prepare redacted filenames and run for Sets A and B
 
-redacted_filename_stems <- sub("*.csv", "", 
-                               filenames[grep(paste0(redacted_tbls, collapse = "-|"), filenames)])
-
-redacted_filename_stems <- gsub("-redacted", "", redacted_filename_stems)
-
-redacted_filenames <- paste0(redacted_filename_stems, "_redacted.csv")
-
-# Write redacted CSV files. Remember not to share corresponding raw data files.
-
-redacted_data_dir <- "./data/2_redacted"
-dir.create(redacted_data_dir)
-
-dat_red <- dat[names(dat) %in% redacted_tbls]
-
-for (i in 1:length(dat_red)) {
-  write.csv(dat_red[[i]], 
-            paste0("./data/2_redacted/", redacted_filenames[i]),
-            row.names = FALSE)
+prep_redacted_filenames <- function(filenames, dat, redacted_tbls) {
+  filenames_sans_ext <- tools::file_path_sans_ext(filenames)
+  
+  redacted_tbls_idx <- which(names(dat) %in% redacted_tbls)
+  
+  redacted_filenames <- paste0(filenames_sans_ext[redacted_tbls_idx], "_redacted.csv")
 }
+
+redacted_filenames_a <- prep_redacted_filenames(filenames_a, dat_a, redacted_tbls_a)
+redacted_filenames_b <- prep_redacted_filenames(filenames_b, dat_b, redacted_tbls_b)
+
+# Define function to write redacted CSV files
+
+write_redacted_data <- function(dat, redacted_tbls, redacted_filenames, path) {
+  dat_redacted <- dat[names(dat) %in% redacted_tbls]
+  
+  for (i in 1:length(dat_redacted)) {
+    write.csv(dat_redacted[[i]],
+              paste0(path, redacted_filenames[i]),
+              row.names = FALSE)
+  }
+}
+
+# Write redacted files to CSV
+
+redacted_dat_dir_a <- "./data/redacted/set_a/"
+redacted_dat_dir_b <- "./data/redacted/set_b/"
+
+dir.create(redacted_dat_dir_a, recursive = TRUE)
+dir.create(redacted_dat_dir_b)
+
+write_redacted_data(dat_a, redacted_tbls_a, redacted_filenames_a, redacted_dat_dir_a)
+write_redacted_data(dat_b, redacted_tbls_b, redacted_filenames_b, redacted_dat_dir_b)
