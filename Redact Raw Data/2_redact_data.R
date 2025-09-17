@@ -7,12 +7,12 @@
 # Notes ----
 # ---------------------------------------------------------------------------- #
 
-# Before running this script, restart R (CTRL+SHIFT+F10 on Windows), set your 
-# working directory to the parent folder, and ensure that the raw CSV files for 
-# Sets A and B obtained from the Private Component of the Managing Anxiety OSF 
-# project (https://osf.io/pvd67/) are in "./data/raw/set_a/" and "./data/raw/set_b/".
-# This script will import raw data from those folders and output redacted data to 
-# "./data/redacted/set_a/" and "./data/redacted/set_b/".
+# Before running this script, restart R (CTRL+SHIFT+F10 on Windows), set your working 
+# directory to the parent folder, and ensure that the raw CSV files for Sets A and B 
+# obtained from the Private Component of the Managing Anxiety OSF project 
+# (https://osf.io/pvd67/) are in "./data/raw_full/set_a/" and "./data/raw_full/set_b/".
+# This script will import raw data from those folders and output certain redacted data 
+# files to "./data/redacted/set_a/" and "./data/redacted/set_b/".
 
 # For raw data files that contain potential identifiers, this script redacts the
 # relevant columns so that subsequent cleaning can be run on a dataset that can be 
@@ -48,13 +48,13 @@ groundhog_day <- version_control()
 
 # Obtain names of raw data files
 
-filenames_a <- readLines("./data/raw/filenames_set_a.txt")
-filenames_b <- readLines("./data/raw/filenames_set_b.txt")
+filenames_a <- readLines("./data/raw_full/filenames_set_a.txt")
+filenames_b <- readLines("./data/raw_full/filenames_set_b.txt")
 
 # Import data files into named lists
 
-dat_a <- lapply(paste0("./data/raw/set_a/", filenames_a), read.csv)
-dat_b <- lapply(paste0("./data/raw/set_b/", filenames_b), read.csv)
+dat_a <- lapply(paste0("./data/raw_full/set_a/", filenames_a), read.csv)
+dat_b <- lapply(paste0("./data/raw_full/set_b/", filenames_b), read.csv)
 
 names(dat_a) <- tools::file_path_sans_ext(filenames_a)
 names(dat_b) <- tools::file_path_sans_ext(filenames_b)
