@@ -21,11 +21,14 @@ To conduct centralized data cleaning for the study and list projects that analyz
 the study's data. Each data analysis project has its own folder that contains the 
 code specific to that project (or a link to the code).
 
-## Obtain and Redact Raw Data
-See the [Obtain and Redact Raw Data](https://github.com/TeachmanLab/R34-Data/tree/master/Obtain%20Redact%20Raw%20Data) folder.
-
 ## Data Cleaning
 See the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) folder.
+
+**TODO:**
+
+- Jeremy to explain what cleaning scripts are in the `Data Cleaning` folder, how they relate 
+to the data used in the main outcomes paper, why additional cleaning was needed, and how the 
+cleaning scripts on the present repo differ from the cleaning scripts in a new linked repo [TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning](https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning)
 
 ## List of Projects
 1. [Main Outcomes](https://github.com/TeachmanLab/R34-Data/tree/master/Main%20Outcomes) (Lead: Julie Ji)
