@@ -8,10 +8,9 @@ of the [MindTrails wiki](https://sites.google.com/a/virginia.edu/mindtrails-wiki
 **Table of Contents**
 1. [Previous Names](#previous-names)
 2. [Goal](#goal)
-3. [Obtain and Redact Raw Data](#obtain-and-redact-raw-data)
-4. [Data Cleaning](#data-cleaning)
-5. [List of Projects](#list-of-projects)
-6. [Contact](#contact)
+3. [Data Cleaning](#data-cleaning)
+4. [List of Projects](#list-of-projects)
+5. [Contact](#contact)
 
 ## Previous Names
 Until 5/18/2020, this repository was named `R34-Data`.
@@ -22,11 +21,28 @@ the study's data. Each data analysis project has its own folder that contains th
 code specific to that project (or a link to the code).
 
 ## Data Cleaning
-See the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) folder.
+
+### For Main Outcomes Paper
+
+See the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) 
+folder for cleaning scripts that predated the cleaning script used in the main outcomes paper.
+
+- `R34_cleaning_script.R` (author: maybe Claudia Calicho-Mamani, but uploaded by Sonia Baee)
+  - Imports TODO
+  - Exports TODO
+- `R34.ipynb` (author: Sonia Baee)
+  - Imports TODO
+  - Exports `FinalData-28Feb20.csv`, but this is not the file imported by the first script
+  (`Script1_DataPrep.R`) on the [OSF project](https://osf.io/3b67v) for the main outcomes paper
+  ([Ji et al., 2021](https://doi.org/g62s)), which imports `FinalData-28Feb20_v02.csv` instead.
+  Thus, `R34.ipynb` is not the final cleaning script used in the main outcomes paper. Sonia 
+  indicated on 11/22/2021 that the final cleaning script was lost when she switched laptops.
+
+### Subsequent Cleaning for Item-Level Data
 
 **TODO:**
 
-- Jeremy to explain what cleaning scripts are in the `Data Cleaning` folder, how they relate 
+- Jeremy to finish explaining what scripts are in the `Data Cleaning` folder, how they relate 
 to the data used in the main outcomes paper, why additional cleaning was needed, and how the 
 cleaning scripts on the present repo differ from the cleaning scripts in a new linked repo [TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning](https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning)
 
