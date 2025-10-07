@@ -1,15 +1,14 @@
 # MT-Data-ManagingAnxietyStudy
 
 This repository is the knowledge base for the MindTrails Managing Anxiety Study (R34) 
-dataset. For more information, see the 
-[Managing Anxiety page](https://sites.google.com/a/virginia.edu/mindtrails-wiki/studies/managinganxiety) 
-of the [MindTrails wiki](https://sites.google.com/a/virginia.edu/mindtrails-wiki/studies/managinganxiety).
+dataset. For more information, see the [Managing Anxiety page][ma-wiki] of the 
+[MindTrails wiki][ma-wiki].
 
-**Table of Contents**
-1. [Previous Names](#previous-names)
-2. [Goal](#goal)
-3. [Data Cleaning](#data-cleaning)
-4. [List of Projects](#list-of-projects)
+**Table of Contents**  
+1. [Previous Names](#previous-names)  
+2. [Goal](#goal)  
+3. [Data Cleaning](#data-cleaning)  
+4. [List of Projects](#list-of-projects)  
 5. [Contact](#contact)
 
 ## Previous Names
@@ -24,7 +23,7 @@ code specific to that project (or a link to the code).
 
 ### For Main Outcomes Paper
 
-See the [Data Cleaning](https://github.com/TeachmanLab/R34-Data/tree/master/Data%20Cleaning) 
+See the [Data Cleaning](./Data Cleaning) 
 folder for cleaning scripts that predated the cleaning script used in the main outcomes paper.
 
 - `R34_cleaning_script.R` (author: maybe Claudia Calicho-Mamani, but uploaded by Sonia Baee)
@@ -47,12 +46,16 @@ to the data used in the main outcomes paper, why additional cleaning was needed,
 cleaning scripts on the present repo differ from the cleaning scripts in a new linked repo [TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning](https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning)
 
 ## List of Projects
-1. [Main Outcomes](https://github.com/TeachmanLab/R34-Data/tree/master/Main%20Outcomes) (Lead: Julie Ji)
-2. [Credibility](https://github.com/TeachmanLab/R34-Data/tree/master/Credibility) (Lead: Nicola Hohensee)
-3. [Attrition](https://doi.org/m5tz) (Lead: [Sonia Baee](https://github.com/soniabaee))
-4. [Network Analyses](https://osf.io/w63br/) (Lead: [Jeremy Eberle](https://github.com/jwe4ec))
-5. [Structural Validity](https://osf.io/sth87/) (Lead: [Jeremy Eberle](https://github.com/jwe4ec))
+1. [Main Outcomes](./Main Outcomes) (Lead: Julie Ji)
+2. [Credibility](./Credibility) (Lead: Nicola Hohensee)
+3. [Flexibility](https://doi.org/10.1177/20438087241226642) (Lead: Julie Ji)
+4. [Attrition](https://doi.org/m5tz) (Lead: [Sonia Baee](https://github.com/soniabaee))
+5. [Network Analyses](https://osf.io/w63br/) (Lead: [Jeremy Eberle][jeremy])
+6. [Structural Validity](https://osf.io/sth87/) (Lead: [Jeremy Eberle][jeremy])
 
 ## Contact
 If you are a researcher who wants to contribute to this project, please contact 
 Bethany Teachman at bteachman@virginia.edu. Thanks!
+
+[jeremy]: https://github.com/jwe4ec
+[ma-wiki]: https://sites.google.com/a/virginia.edu/mindtrails-wiki/studies/managinganxiety
