@@ -23,7 +23,7 @@ code specific to that project (or a link to the code).
 
 ### For Main Outcomes Paper
 
-See the [Data Cleaning](./Data Cleaning) 
+See the [Data Cleaning](./Data%20Cleaning) 
 folder for cleaning scripts that predated the cleaning script used in the main outcomes paper.
 
 - `R34_cleaning_script.R` (author: maybe Claudia Calicho-Mamani, but uploaded by Sonia Baee)
@@ -46,7 +46,7 @@ to the data used in the main outcomes paper, why additional cleaning was needed,
 cleaning scripts on the present repo differ from the cleaning scripts in a new linked repo [TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning](https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning)
 
 ## List of Projects
-1. [Main Outcomes](./Main Outcomes) (Lead: Julie Ji)
+1. [Main Outcomes](./Main%20Outcomes) (Lead: Julie Ji)
 2. [Credibility](./Credibility) (Lead: Nicola Hohensee)
 3. [Flexibility](https://doi.org/10.1177/20438087241226642) (Lead: Julie Ji)
 4. [Attrition](https://doi.org/m5tz) (Lead: [Sonia Baee](https://github.com/soniabaee))
