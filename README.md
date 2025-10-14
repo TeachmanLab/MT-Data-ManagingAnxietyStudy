@@ -40,8 +40,8 @@ which will not be fixed now but that are left open for reference.
 by [Sonia Baee][sonia])
 - `R34.ipynb` (author: Sonia Baee)
 
-These two scripts seem to be separate drafts (i.e., one script does not import data files exported from 
-the other). Given that `R34.ipynb` exports a data file whose name (`FinalData-28Feb20.csv`) 
+These two scripts seem to be separate drafts (i.e., one script does not import data files exported 
+from the other). Given that `R34.ipynb` exports a data file whose name (`FinalData-28Feb20.csv`) 
 resembles that of the data file (`FinalData-28Feb20_v02.csv`) imported by `Script1_DataPrep.R` 
 (on the main outcomes paper's [OSF project][ji-et-al-2021-osf]), `R34.ipynb` seems to be the 
 later draft. But the final version of `R34.ipynb` is unavailable (Sonia indicated on 11/22/2021 
@@ -69,8 +69,8 @@ credibility paper ([Hohensee et al., 2020][hohensee-et-al-2020]).
 ## Subsequent Data Cleaning
 
 Given that the final cleaning script and the raw data used to generate the clean data for the 
-[main outcomes paper](#main-outcomes-paper) are lost, and that the clean data on the main outcomes paper's
-OSF project has item-level data only at baseline (and only scale-level data over time),
+[main outcomes paper](#main-outcomes-paper) are lost, and that the clean data on the main outcomes 
+paper's OSF project has item-level data only at baseline (and only scale-level data over time),
 the separate [MT-Data-ManagingAnxietyStudy-Cleaning][ma-cleaning-repo] repo seeks to obtain clean 
 item-level data on key measures over time for the 807 participants in the main outcomes paper's
 intent-to-treat sample.
@@ -88,12 +88,13 @@ consecutive). The repo also outputs clean data for more measures (i.e., credibil
 datasets used in that paper, and the new cleaning pipeline is reproducible.
 
 For the raw datasets and cleaning scripts used by the new pipeline and the clean data it exports,
-see the [MT-Data-ManagingAnxietyStudy-Cleaning][ma-cleaning-repo] repo. For differences between the initial
-data cleaning used in the main outcomes paper and the new pipeline, see the 
+see the [MT-Data-ManagingAnxietyStudy-Cleaning][ma-cleaning-repo] repo. For differences between the 
+initial data cleaning used in the main outcomes paper and the new pipeline, see the 
 [Differences][ma-cleaning-repo-readme-differences] section of the new pipeline's README.
 
 ## Contact
-If you would like to contribute to this project, contact Bethany Teachman at ([bteachman@bvirginia.edu][bethany-email]).
+If you would like to contribute to this project, contact Bethany Teachman at 
+([bteachman@bvirginia.edu][bethany-email]).
 
 <!-- Reference links -->
 
