@@ -1,8 +1,8 @@
 # MT-Data-ManagingAnxietyStudy
 
 This repository is the knowledge base for the MindTrails Managing Anxiety Study (R34) 
-dataset. For more information, see the [Managing Anxiety page][mt-wiki-ma] of the 
-[MindTrails wiki][mt-wiki].
+data. For more information about the study, see the [Managing Anxiety page][mt-wiki-ma] 
+of the [MindTrails wiki][mt-wiki].
 
 [Previous Names](#previous-names)  
 [Goal](#goal)  
@@ -33,7 +33,7 @@ Lead: Julie Ji
 See the [Data Cleaning](./Data%20Cleaning) folder for drafts of two initial data
 cleaning scripts used in the main outcomes paper ([Ji et al., 2021][ji-et-al-2021]). 
 However, the final cleaning script was lost, and the exact version of the raw dataset 
-that was cleaned for that paper also seems lost. Both scripts have [issues](./issues), 
+that was cleaned for that paper also seems lost. Both scripts have [issues][ma-repo-issues], 
 which will not be fixed now but that are left open for reference.
 
 - `R34_cleaning_script.R` (author: maybe [Claudia Calicho-Mamani][claudia], but uploaded 
@@ -66,7 +66,7 @@ Lead: Nicola Hohensee
 See the [Credibility](./Credibility) folder for the analysis script used in the
 credibility paper ([Hohensee et al., 2020][hohensee-et-al-2020]).
 
-## Subsequent Data Cleaning for Item-Level Data
+## Subsequent Data Cleaning
 
 Given that the final cleaning script and the raw data used to generate the clean data for the 
 [main outcomes paper](#main-outcomes-paper) are lost, and that the clean data on the main outcomes paper's
@@ -103,6 +103,7 @@ If you would like to contribute to this project, contact Bethany Teachman at ([b
 [jeremy]: https://github.com/jwe4ec
 [ji-et-al-2021]: https://doi.org/10.1016/j.brat.2021.103864
 [ji-et-al-2021-osf]: https://osf.io/3b67v
+[ma-repo-issues]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy/issues
 [ma-cleaning-repo]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning
 [ma-cleaning-repo-readme-differences]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning#differences
 [ma-cleaning-repo-readme-initial-cleaning]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning#initial-cleaning
