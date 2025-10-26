@@ -30,22 +30,24 @@ Lead: Julie Ji
 
 ### Drafts of Data Cleaning Scripts
 
-See the [Data Cleaning](./Data%20Cleaning) folder for drafts of two initial data
+See the [Data Cleaning](./Data%20Cleaning) folder for drafts of three initial data
 cleaning scripts used in the main outcomes paper ([Ji et al., 2021][ji-et-al-2021]). 
 However, the final cleaning script was lost, and the exact version of the raw dataset 
-that was cleaned for that paper also seems lost. Both scripts have [issues][ma-repo-issues], 
+that was cleaned for that paper also seems lost. The scripts have [issues][ma-repo-issues], 
 which will not be fixed now but that are left open for reference.
 
-- `R34_cleaning_script.R` (author: maybe [Claudia Calicho-Mamani][claudia], but uploaded 
+- `R34_cleaning_script.R` (author: likely [Claudia Calicho-Mamani][claudia], but uploaded 
 by [Sonia Baee][sonia])
+- `Claudia - cleaning script.R` (author: likely Sonia Baee's revision of `R34_cleaning_script.R`)
 - `R34.ipynb` (author: Sonia Baee)
 
-These two scripts seem to be separate drafts (i.e., one script does not import data files exported 
-from the other). Given that `R34.ipynb` exports a data file whose name (`FinalData-28Feb20.csv`) 
-resembles that of the data file (`FinalData-28Feb20_v02.csv`) imported by `Script1_DataPrep.R` 
-(on the main outcomes paper's [OSF project][ji-et-al-2021-osf]), `R34.ipynb` seems to be the 
-later draft. But the final version of `R34.ipynb` is unavailable (Sonia indicated on 11/22/2021 
-that the final script was lost upon switching laptops).
+These seem to be separate drafts (i.e., except for `notes.csv`, which is exported by 
+`Claudia - cleaning script.R` and imported by `R34.ipynb`, one script does not import files 
+exported from the other). Given that `R34.ipynb` exports a data file whose name (`FinalData-28Feb20.csv`) 
+resembles that of the file (`FinalData-28Feb20_v02.csv`) imported by `Script1_DataPrep.R` (on the 
+main outcomes paper's [OSF project][ji-et-al-2021-osf]), `R34.ipynb` seems to be the latest draft. 
+But the final version of `R34.ipynb` is unavailable (Sonia wrote on 11/22/2021 that the final 
+script was lost switching laptops).
 
 For more details about the initial cleaning done for the main outcomes paper, including more
 details on these scripts and the clean data exported from the initial cleaning pipeline, see
