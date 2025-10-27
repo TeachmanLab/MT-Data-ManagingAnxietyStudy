@@ -43,7 +43,7 @@ by [Sonia Baee][sonia])
 
 These seem to be separate drafts (i.e., except for `notes.csv`, which is exported by 
 `Claudia - cleaning script.R` and imported by `R34.ipynb`, one script does not import files 
-exported from the other). Given that `R34.ipynb` exports a data file whose name (`FinalData-28Feb20.csv`) 
+exported from another). Given that `R34.ipynb` exports a data file whose name (`FinalData-28Feb20.csv`) 
 resembles that of the file (`FinalData-28Feb20_v02.csv`) imported by `Script1_DataPrep.R` (on the 
 main outcomes paper's [OSF project][ji-et-al-2021-osf]), `R34.ipynb` seems to be the latest draft. 
 But the final version of `R34.ipynb` is unavailable (Sonia wrote on 11/22/2021 that the final 
