@@ -34,7 +34,7 @@ See the [Data Cleaning](./Data%20Cleaning) folder for drafts of three initial da
 cleaning scripts used in the main outcomes paper ([Ji et al., 2021][ji-et-al-2021]). 
 However, the final cleaning script was lost, and the exact version of the raw dataset 
 that was cleaned for that paper also seems lost. The scripts have [issues][ma-repo-issues], 
-which will not be fixed now but that are left open for reference.
+which will not be fixed now but are left open for reference.
 
 - `R34_cleaning_script.R` (author: likely [Claudia Calicho-Mamani][claudia], but uploaded 
 by [Sonia Baee][sonia])
@@ -48,6 +48,13 @@ resembles that of the file (`FinalData-28Feb20_v02.csv`) imported by `Script1_Da
 main outcomes paper's [OSF project][ji-et-al-2021-osf]), `R34.ipynb` seems to be the latest draft. 
 But the final version of `R34.ipynb` is unavailable (Sonia wrote on 11/22/2021 that the final 
 script was lost switching laptops).
+
+`R34_cleaning_script.R` and `R34.ipynb` were uploaded to the present repo directly by Sonia,
+whereas `Claudia - cleaning script.R` was obtained from Sonia's [R34-Data][sonia-fork-ma-repo]
+fork of the present repo on 10/26/2025 (the script was last updated 2/29/2020, as of commit
+`87e8df6` on Sonia's fork). The other cleaning scripts on Sonia's fork are identical to other scripts already 
+on the present repo (see [Issue 4][ma-cleaning-repo-issue4] on the 
+[MT-Data-ManagingAnxietyStudy-Cleaning][ma-cleaning-repo] repo).
 
 For more details about the initial cleaning done for the main outcomes paper, including more
 details on these scripts and the clean data exported from the initial cleaning pipeline, see
@@ -108,8 +115,10 @@ If you would like to contribute to this project, contact Bethany Teachman at
 [ji-et-al-2021-osf]: https://osf.io/3b67v
 [ma-repo-issues]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy/issues
 [ma-cleaning-repo]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning
+[ma-cleaning-repo-issue4]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning/issues/4
 [ma-cleaning-repo-readme-differences]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning#differences
 [ma-cleaning-repo-readme-initial-cleaning]: https://github.com/TeachmanLab/MT-Data-ManagingAnxietyStudy-Cleaning#initial-cleaning
 [mt-wiki]: https://sites.google.com/d/1x5M3ATWCvOFtk9hIX8gprtK367xX-3kk/p/1312N9KMPKyqKHopSHfr0QH_2AlUO2Wgu/edit?pli=1
 [mt-wiki-ma]: https://sites.google.com/d/1x5M3ATWCvOFtk9hIX8gprtK367xX-3kk/p/1Vf0wPMhHS5aYQ3mOWQOhVo52JaKrf3or/edit?pli=1
 [sonia]: https://github.com/soniabaee
+[sonia-fork-ma-repo]: https://github.com/soniabaee/R34-Data
